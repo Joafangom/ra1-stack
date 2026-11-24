@@ -25,7 +25,8 @@
 * **Exclusión en Git:** `backups/` añadido a `.gitignore`.
 * **Prueba de restauración:**
   1. Copia previa con `./scripts/backup.sh`.
-  2. Borrado de la entrada `[PONER TÍTULO E ID]` con `--force` y del plugin `flamingo`.
-  3. Restauración con `./scripts/restore.sh [FECHA]` confirmando con `SI`.
+  2. Borrado de la entrada `Novedades de redes en el ciclo (ID 45)` con `--force` y del plugin `flamingo`.
+  3. Restauración con `./scripts/restore.sh 20261124-134903` confirmando con `SI`.
   4. Resultado: tanto la entrada como `flamingo` (y sus mensajes) se recuperaron intactos.
 * **Automatización:** Tarea `cron` martes y miércoles a las 13:30 (`30 13 * * 2,3 cd $HOME/ra1-stack && ./scripts/backup.sh >> backups/backup.log 2>&1`).
+
