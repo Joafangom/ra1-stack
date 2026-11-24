@@ -33,3 +33,7 @@ Proyecto de despliegue de una infraestructura web en contenedores con **Nginx**,
 * [Personalización del sitio y límites de PHP](docs/personalizacion.md)
 * [Seguridad del gestor (Antes y Después)](docs/seguridad.md)
 * [Pruebas, rendimiento y publicación](docs/pruebas.md)
+
+## Copias de seguridad y restauración
+* **Crear copia manual:** `./scripts/backup.sh` (genera `backups/db_<FECHA>.sql.gz` y `backups/wp-content_<FECHA>.tar.gz`, conserva 7).
+* **Restaurar copia:** `./scripts/restore.sh` para listar fechas y `./scripts/restore.sh AAAAMMDD-HHMMSS` para restaurar tras confirmar con `SI`.
