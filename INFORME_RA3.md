@@ -30,3 +30,11 @@
   4. Resultado: tanto la entrada como `flamingo` (y sus mensajes) se recuperaron intactos.
 * **Automatización:** Tarea `cron` martes y miércoles a las 13:30 (`30 13 * * 2,3 cd $HOME/ra1-stack && ./scripts/backup.sh >> backups/backup.log 2>&1`).
 
+
+## 4. Importación y exportación en distintos formatos (Práctica 3)
+* **Formatos utilizados:**
+  * **WXR (XML de WordPress):** Exportación completa del sitio (`wp export --stdout > exportaciones/sitio_YYYYMMDD.xml`) e importación de `contenidos_asir.xml` mediante el plugin `wordpress-importer` (`--authors=create`), añadiendo 6 entradas (Noticias, Eventos y Prácticas) y 2 páginas (*Horario del ciclo* y *Normas del aula técnica*).
+  * **CSV:** Importación masiva de usuarios desde `datos/usuarios.csv` (`wp user import-csv`), creando los nuevos con contraseña aleatoria y actualizando los existentes sin duplicarlos, además de exportar listados de entradas (`entradas.csv`).
+  * **JSON (WP-CLI y API REST):** Exportación de usuarios en JSON (`usuarios.json`) y consulta pública mediante la API REST (`/wp-json/wp/v2/posts` y `/wp-json/wp/v2/users`).
+  * **SQL:** Volcado selectivo de la tabla `wp_users` (`exportaciones/wp_users.sql`), comprobando que almacena hashes bcrypt (`$wp$2y$...`). Por seguridad, tanto `exportaciones/` como `backups/` permanecen excluidos en `.gitignore`.
+* **Intercambio cooperativo:** Se creó y exportó una entrada en la categoría *Prácticas* explicando los cuatro formatos y se importó el archivo WXR (`.xml`) de la compañera en el sitio manteniendo su autoría.
